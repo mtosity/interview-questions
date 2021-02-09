@@ -1,3 +1,3 @@
 # Personal interivew notes
 
-Keep track progress, note, code when learning interview questions
+Keep track progress, notes, codes when learning interview questions
