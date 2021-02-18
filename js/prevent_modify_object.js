@@ -4,10 +4,10 @@ var employee = {
 	name: "Nishant"
 };
 
-//Freeze the object
+//Freeze the object, can not modify
 Object.freeze(employee); 
 
-// Seal the object 
+// Seal the object, can not add proverty
 Object.seal(employee);
 
 console.log(Object.isExtensible(employee)); // false
