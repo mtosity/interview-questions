@@ -1,5 +1,7 @@
 this.x = 2;
 
+https://www.youtube.com/watch?v=NV9sHLX-jZU
+
 const myObject = {
     a: 'b',
     b: 'c',
