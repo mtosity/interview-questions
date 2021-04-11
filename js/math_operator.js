@@ -13,3 +13,6 @@ String + Boolean -> Concatenation
 String + String -> Concatenation
 
 */
+
+console.log('object' + 2);
+console.log(2 + 'object');

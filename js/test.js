@@ -1,35 +1,31 @@
-function main(input) {
-  var data = input.split("\n");
-  let n = parseInt(data[0]);
-
-  let result = 0;
-  for (let i = 1; i < n+1; i++) {
-    let [lucky, salary_str] = data[i].split(" ");
-    let salary = parseInt(salary_str),
-      n_lucky = lucky.length;
-
-    let hash_char = {};
-    for (let j = 0; j < n_lucky; j++) {
-      if (hash_char[lucky[j]]) {
-        hash_char[lucky[j]]++;
-      } else {
-        hash_char[lucky[j]] = 1;
+var sumEvenAfterQueries = function(A, queries) {
+  let sum = A.reduce((result, current) => {
+      result += current;
+      return result;
+  }, 0);
+  
+  
+  for(let i=0;i<queries.length;i++){
+      let [val, index] = queries[i];
+  console.log(val, index);
+      
+      if(A[index] % 2 === 0 && val % 2 === 0){
+          sum += val;
       }
-    }
-
-    let xmau = 1;
-    for (let c in hash_char) {
-      xmau *= n_n(hash_char[c]);
-    }
-    let x = n_n(n_lucky) / xmau;
-
-    let gift = (Math.pow(salary, x));
-    if (gift > (20000192000019)) {
-      gift = (20000192000019);
-    }
-
-    result += gift;
+      
+      if(A[index] % 2 !== 0 && val % 2 !== 0){
+          sum += (A[index] + val);
+      }
+      
+      if(A[index] % 2 === 0 && val % 2 !== 0){
+          sum -= A[index];
+      }
+      
+      A[index] += val;
   }
+  
+  return sum;
+};
 
-  process.stdout.write(result.toString());
-}
+console.log(sumEvenAfterQueries([1,2,3,4], [[1,0],[-3,1],[-4,0],[2,3]]));
+
